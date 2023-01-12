@@ -54,16 +54,21 @@ cp .env.example .env
 - **Docker support**
 - **Code coverage**: using [coveralls](https://coveralls.io)
 - **Code quality**: with [Codacy](https://www.codacy.com)
-- **Git hooks**: with [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged)
-- **Linting**: with [ESLint](https://eslint.org) and [Prettier](https://prettier.io)
+ - **Linting**: with [ESLint](https://eslint.org) and [Prettier](https://prettier.io)
 - **Editor config**: consistent editor configuration using [EditorConfig](https://editorconfig.org)
 
 ## Commands
 
-Running locally:
+Seed Database:
 
 ```bash
 npm run dev
+```
+
+Running locally:
+
+```bash
+npm run dev syncDb
 ```
 
 Running in production:
@@ -117,6 +122,7 @@ npm prettier:fix
 
 ```
 src\
+ |--developer-docs\ # All what developer need
  |--config\         # Environment variables and configuration related things
  |--controllers\    # Route controllers (controller layer)
  |--docs\           # Swagger files
@@ -132,6 +138,8 @@ src\
 ## API Documentation
 
 To view the list of available APIs and their specifications, run the server and go to `http://3.64.232.239:3000/api-docs` in your browser. This documentation page is automatically generated using the [swagger](https://swagger.io/) definitions written as comments in the route files.
+
+## Postman Structure
 
 ## Error Handling
 
