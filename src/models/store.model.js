@@ -15,6 +15,10 @@ const storeSchema = mongoose.Schema({
         required: true,
         trim: true,
     },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     products: [{
         type: Schema.Types.ObjectId,
         ref: 'Product'

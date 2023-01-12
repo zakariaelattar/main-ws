@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const { Store } = require('../models');
 const faker = require('faker');
 const logger = require('../config/logger');
+const ObjectId = mongoose.Types.ObjectId;
 
 
 
@@ -13,8 +14,8 @@ const seedStores = async() => {
         const store = new Store({
             title: faker.company.companyName(),
             products,
-            country: faker.address.country(),
-            currency: faker.finance.currencyCode()
+            country: new ObjectId(),
+            currency: new ObjectId()
         });
         stores.push(store);
     }
