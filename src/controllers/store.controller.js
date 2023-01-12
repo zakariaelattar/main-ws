@@ -10,7 +10,7 @@ const createStore = catchAsync(async(req, res) => {
 });
 
 const getStores = catchAsync(async(req, res) => {
-    const filter = pick(req.query, ['title', 'country']);
+    const filter = pick(req.query, ['title', 'country', 'currency']);
     const options = pick(req.query, ['sortBy', 'limit', 'page']);
     const result = await storeService.queryStores(filter, options);
     res.send(result);

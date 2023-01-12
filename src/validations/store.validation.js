@@ -3,17 +3,18 @@ const { password, objectId } = require('./custom.validation');
 
 const createStore = {
     body: Joi.object().keys({
-        email: Joi.string().required().email(),
-        password: Joi.string().required().custom(password),
-        name: Joi.string().required(),
-        role: Joi.string().required().valid('store', 'admin'),
+        title: Joi.string().required(),
+        products: Joi.array().items(
+            Joi.custom(objectId)
+        ),
+        country: Joi.custom(objectId),
+        currency: Joi.custom(objectId)
     }),
 };
 
 const getStores = {
     query: Joi.object().keys({
-        name: Joi.string(),
-        role: Joi.string(),
+        title: Joi.string(),
         sortBy: Joi.string(),
         limit: Joi.number().integer(),
         page: Joi.number().integer(),
@@ -32,9 +33,9 @@ const updateStore = {
     }),
     body: Joi.object()
         .keys({
-            email: Joi.string().email(),
-            password: Joi.string().custom(password),
-            name: Joi.string(),
+            title: Joi.string(),
+            country: Joi.custom(objectId),
+            currency: Joi.custom(objectId)
         })
         .min(1),
 };
