@@ -1,4 +1,4 @@
-# Bookings microservice
+# Main webservice
  
 
 This project is the main-ws of the e-commerce website built on Node.js, Express.
