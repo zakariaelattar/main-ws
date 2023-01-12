@@ -1,10 +1,10 @@
 {
-    "name": "bookings-microservice",
-    "version": "1.7.0",
-    "description": "The booking microservice",
+    "name": "main-ws",
+    "version": "1.0.0",
+    "description": "The main web-service",
     "bin": "bin/createNodejsApp.js",
     "main": "src/index.js",
-    "repository": "https://github.com/Proj856/bookings-microservice.git",
+    "repository": "https://https://github.com/zakariaelattar/main-ws.git",
     "author": "zakaria el attar <elattarz@yahoo.com>",
     "license": "MIT",
     "engines": {
@@ -15,6 +15,7 @@
         "dev_no_security": "cross-env NODE_ENV=development nodemon src/index.js disable_security",
         "dev": "cross-env NODE_ENV=development nodemon src/index.js",
         "test": "jest -i --colors --verbose --detectOpenHandles",
+        "syncDb": "cross-env NODE_ENV=development node src/index.js syncDb",
         "test:watch": "jest -i --watchAll",
         "coverage": "jest -i --coverage",
         "coverage:coveralls": "jest -i --coverage --coverageReporters=text-lcov | coveralls",

@@ -7,15 +7,21 @@ const { ROLES } = require('../config/constants');
 
 
 
-const currencySchema = mongoose.Schema({
-    cc: {
+const timezoneSchema = mongoose.Schema({
+    value: {
         type: String
     },
-    symbol: {
+    abbe: {
         type: String
     },
-    name: {
+    isdst: {
+        type: Boolean
+    },
+    text: {
         type: String
+    },
+    utc: {
+        type: [String]
     }
 
 }, {
@@ -25,14 +31,14 @@ const currencySchema = mongoose.Schema({
 
 
 // add plugin that converts mongoose to json
-currencySchema.plugin(toJSON);
-currencySchema.plugin(paginate);
+timezoneSchema.plugin(toJSON);
+timezoneSchema.plugin(paginate);
 
 
 
 /**
- * @typedef Currency
+ * @typedef Timezone
  */
-const Currency = mongoose.model('Currency', currencySchema);
+const Timezone = mongoose.model('Timezone', timezoneSchema);
 
-module.exports = Currency;
+module.exports = Timezone;

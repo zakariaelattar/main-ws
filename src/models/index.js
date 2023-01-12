@@ -4,3 +4,6 @@ module.exports.Order = require('./order.model');
 module.exports.Product = require('./product.model');
 module.exports.Store = require('./store.model');
 module.exports.Payment = require('./payment.model');
+module.exports.Country = require('./country.model');
+module.exports.Timezone = require('./timezone.model');
+module.exports.Currency = require('./currency.model');

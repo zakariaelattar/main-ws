@@ -8,29 +8,12 @@ const { ROLES } = require('../config/constants');
 
 
 const countrySchema = mongoose.Schema({
-    title: {
-        type: String,
-        required: true,
+    name: {
+        type: String
     },
-    description: {
-        type: String,
-
-    },
-    image_url: {
-        type: String,
-        required: true,
-
-    },
-    price: {
-        type: Number,
-        required: true,
-
-    },
-    stock: {
-        type: Number,
-        default: 0,
-
-    },
+    code: {
+        type: String
+    }
 
 }, {
     timestamps: true,
