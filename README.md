@@ -15,7 +15,7 @@ This project is the main-ws of the e-commerce website built on Node.js, Express.
 
   ## Overview
 
-  ![Project Components](https://raw.githubusercontent.com/zakariaelattar/main-ws/master/gitassets/1.png)
+  * Please check the link https://mega.nz/folder/yQJyXBJK#I6QpnLLdoQGXjluh7bBsOg for project components and postman architecture 
   
 
 ## Manual Installation
@@ -158,9 +158,6 @@ src\
 
 To view the list of available APIs and their specifications, run the server and go to `http://3.64.232.239:3000/api-docs` in your browser. This documentation page is automatically generated using the [swagger](https://swagger.io/) definitions written as comments in the route files.
 
-## Postman Structure
-
-  ![Postman structure](https://raw.githubusercontent.com/zakariaelattar/main-ws/master/gitassets/2.png)
 
 ## Error Handling
 
