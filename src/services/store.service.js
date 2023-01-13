@@ -22,7 +22,7 @@ const createStore = async(storeBody) => {
  * @returns {Promise<QueryResult>}
  */
 const queryStores = async(filter, options) => {
-    options = {...options, populate: "products,currencies,countries" }
+    options = {...options, populate: "products,region" }
     const stores = await Store.paginate(filter, options);
     return stores;
 };

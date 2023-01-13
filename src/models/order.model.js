@@ -7,11 +7,11 @@ const Schema = mongoose.Schema;
 const orderSchema = mongoose.Schema({
     customer: {
         type: Schema.Types.ObjectId,
-        required: true,
+        ref: 'User'
     },
     products: [{
         type: Schema.Types.ObjectId,
-        required: true,
+        ref: 'Product'
     }],
     shipping_address: {
         type: String,

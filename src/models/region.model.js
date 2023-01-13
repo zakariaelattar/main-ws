@@ -10,10 +10,12 @@ const regionSchema = mongoose.Schema({
         required: true
     },
     country: {
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
+        ref: 'Country'
     },
     currency: {
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
+        ref: 'Currency'
     },
     tax: {
         type: Number,

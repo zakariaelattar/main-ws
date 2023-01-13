@@ -6,7 +6,7 @@ const ObjectId = mongoose.Types.ObjectId;
 
 
 
-const seedStores = async(productss = []) => {
+const seedStores = async(productss = [], regions = []) => {
 
     const stores = [];
     for (let i = 0; i < 5; i++) {
@@ -14,7 +14,7 @@ const seedStores = async(productss = []) => {
         const store = new Store({
             title: faker.company.companyName(),
             products: [productss[i]['_id']],
-            country: new ObjectId(),
+            region: regions[i]['_id'],
             currency: new ObjectId()
         });
         stores.push(store);

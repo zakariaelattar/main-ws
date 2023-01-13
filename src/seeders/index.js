@@ -22,7 +22,7 @@ const runSeeder = async() => {
         const countries = await seedCountries();
         const regions = await seedRegions(countries, currencies, timezones);
         const products = await seedProducts(regions);
-        const stores = await seedStores(products);
+        const stores = await seedStores(products, regions);
         const { customerAdmins, customers, admins } = await seedUsers();
         const orders = await seedOrders(customers, products);
         return;

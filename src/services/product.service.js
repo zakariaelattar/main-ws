@@ -22,6 +22,7 @@ const createProduct = async(productBody) => {
  * @returns {Promise<QueryResult>}
  */
 const queryProducts = async(filter, options) => {
+    options = {...options, populate: 'region' };
     const products = await Product.paginate(filter, options);
     return products;
 };

@@ -3,7 +3,11 @@ const { password, objectId } = require('./custom.validation');
 
 const createOrder = {
     body: Joi.object().keys({
-
+        shipping_address: Joi.string().required(),
+        products: Joi.array().items(
+            Joi.custom(objectId)
+        ).min(1),
+        order_total: Joi.number().required()
     }),
 };
 
@@ -28,9 +32,11 @@ const updateOrder = {
     }),
     body: Joi.object()
         .keys({
-            email: Joi.string().email(),
-            password: Joi.string().custom(password),
-            name: Joi.string(),
+            "shipping_address": Joi.string().required(),
+            "products": Joi.array().items(
+                Joi.custom(objectId)
+            ),
+            "order_total": Joi.number().required()
         })
         .min(1),
 };

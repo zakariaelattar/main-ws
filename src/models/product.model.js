@@ -16,7 +16,8 @@ const productSchema = mongoose.Schema({
 
     },
     region: {
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
+        ref: 'Region'
     },
     image_url: {
         type: String,

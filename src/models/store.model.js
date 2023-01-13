@@ -20,18 +20,13 @@ const storeSchema = mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'Product'
     }],
-    country: {
+    region: {
         type: Schema.Types.ObjectId,
-        ref: 'Country',
+        ref: 'Region',
         required: true
 
     },
-    currency: {
-        type: Schema.Types.ObjectId,
-        ref: 'Currency',
-        required: true,
 
-    },
 
 }, {
     timestamps: true,
