@@ -1,11 +1,23 @@
 # Main webservice
- 
 
 This project is the main-ws of the e-commerce website built on Node.js, Express.
- 
-## Manual Installation
 
- 
+## Notes
+
+- The project contain 2 main components:
+  - main webservice which is the current repo
+  - payment gateway repo https://github.com/zakariaelattar/payment-gateway
+
+- The .env.example file contain the right credentials to test the app, so just copy .env.example into .env
+
+- Postman invite link to test the application in dev environment:
+  - https://app.getpostman.com/join-team?invite_code=59ff318be9253cb1e0a75d9d6d2ed17c&target_code=d7d1434eff8d071ee83fcf1151110a86
+
+  ## Overview
+
+  ![Project Components](https://github.com/zakariaelattar/main-ws/blob/master/git-assets/project-components.png?raw=true)
+
+## Manual Installation
 
 Install the dependencies:
 
@@ -21,7 +33,8 @@ cp .env.example .env
 
 ## Table of Contents
 
-- [Features](#features)
+- [Technical Features](#technical-features)
+- [Business Features](#business-features)
 - [Commands](#commands)
 - [Environment Variables](#environment-variables)
 - [Project Structure](#project-structure)
@@ -33,16 +46,17 @@ cp .env.example .env
 - [Logging](#logging)
 - [Custom Mongoose Plugins](#custom-mongoose-plugins)
 - [Linting](#linting)
- 
+
   ## Business Features
+
 - Users (Register,Login,CRUD)
 - Products (CRUD)
 - Order (CRUD)
 - Region (CRUD)
 - Store (CRUD)
+- Payment (external call to payment gateway via HTTP)
 
-
- ## Technical Features
+## Technical Features
 
 - **MONGODB database**: [MongoDB](https://www.mongodb.com/) object data modeling using [Mongoose](https://mongoosejs.com)
 - **Authentication and authorization**: using [passport](http://www.passportjs.org)
@@ -52,18 +66,12 @@ cp .env.example .env
 - **Error handling**: centralized error handling mechanism
 - **API documentation**: with [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc) and [swagger-ui-express](https://github.com/scottie1984/swagger-ui-express)
 - **Process management**: advanced production process management using [PM2](https://pm2.keymetrics.io)
-- **Dependency management**: with [Yarn](https://yarnpkg.com)
+- **Dependency management**: with [Npm](https://yarnpkg.com)
 - **Environment variables**: using [dotenv](https://github.com/motdotla/dotenv) and [cross-env](https://github.com/kentcdodds/cross-env#readme)
 - **Security**: set security HTTP headers using [helmet](https://helmetjs.github.io)
 - **Santizing**: sanitize request data against xss and query injection
 - **CORS**: Cross-Origin Resource-Sharing enabled using [cors](https://github.com/expressjs/cors)
 - **Compression**: gzip compression with [compression](https://github.com/expressjs/compression)
-- **CI**: continuous integration with [Travis CI](https://travis-ci.org)
-- **Docker support**
-- **Code coverage**: using [coveralls](https://coveralls.io)
-- **Code quality**: with [Codacy](https://www.codacy.com)
- - **Linting**: with [ESLint](https://eslint.org) and [Prettier](https://prettier.io)
-- **Editor config**: consistent editor configuration using [EditorConfig](https://editorconfig.org)
 
 ## Commands
 
@@ -126,6 +134,7 @@ npm prettier
 # fix prettier errors
 npm prettier:fix
 ```
+
 ## Project Structure
 
 ```
@@ -143,6 +152,7 @@ src\
  |--app.js          # Express app
  |--index.js        # App entry point
 ```
+
 ## API Documentation
 
 To view the list of available APIs and their specifications, run the server and go to `http://3.64.232.239:3000/api-docs` in your browser. This documentation page is automatically generated using the [swagger](https://swagger.io/) definitions written as comments in the route files.
@@ -169,7 +179,6 @@ const controller = catchAsync(async (req, res) => {
 Request data is validated using [Joi](https://joi.dev/). Check the [documentation](https://joi.dev/api/) for more details on how to write Joi validation schemas.
 
 The validation schemas are defined in the `src/validations` directory and are used in the routes by providing them as parameters to the `validate` middleware.
-
 
 ## Authentication
 
@@ -244,8 +253,6 @@ This app uses pm2 in production mode, which is already configured to store the l
 
 Note: API request information (request url, response code, timestamp, etc.) are also automatically logged (using [morgan](https://github.com/expressjs/morgan)).
 
-
-
 ## Linting
 
 Linting is done using [ESLint](https://eslint.org/) and [Prettier](https://prettier.io).
@@ -257,5 +264,3 @@ To modify the ESLint configuration, update the `.eslintrc.json` file. To modify 
 To prevent a certain file or directory from being linted, add it to `.eslintignore` and `.prettierignore`.
 
 To maintain a consistent coding style across different IDEs, the project contains `.editorconfig`
-
-
