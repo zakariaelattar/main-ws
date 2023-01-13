@@ -1,4 +1,4 @@
-const { externalService } = require('.');
+const externalService = require('./external.service');
 const { Order } = require('../models');
 
 

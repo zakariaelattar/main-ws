@@ -7,7 +7,7 @@ const createOrder = {
         products: Joi.array().items(
             Joi.custom(objectId)
         ).min(1),
-        order_total: Joi.number().required()
+        orderTotal: Joi.number().required()
     }),
 };
 
@@ -36,7 +36,7 @@ const updateOrder = {
             "products": Joi.array().items(
                 Joi.custom(objectId)
             ),
-            "order_total": Joi.number().required()
+            "orderTotal": Joi.number().required()
         })
         .min(1),
 };

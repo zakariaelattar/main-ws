@@ -11,11 +11,17 @@ const ApiError = require('../utils/ApiError');
  * @param {*} order 
  */
 const payOrder = async(order) => {
-    const { order_total: amount } = order;
+    const { orderTotal: amount } = order;
+    console.log(amount)
+    logger.info(`interrogating ws ${config.externalWs.paymentWs}...`)
     try {
-        const response = await axios.post(`${config.externalWs.paymentWs}payOrder`, amount);
-        if (1) {
-            return await Order.updateOne({ id: order.id }, { payedAt: new Date() })
+        const response = await axios.post(`${config.externalWs.paymentWs}payments/payOrder`, { amount }, {});
+        const { status } = response;
+        console.log(response.status);
+        if (status == 200) {
+            const paidAt = new Date();
+            logger.info(`Updating order payed at ${paidAt}`)
+            return await Order.updateOne({ _id: order['_id'] }, { paidAt })
         } else {
             throw new ApiError(httpStatus.INTERNAL_SERVER_ERROR, 'Something wrong happened')
         }
