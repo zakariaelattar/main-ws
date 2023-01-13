@@ -15,7 +15,7 @@ This project is the main-ws of the e-commerce website built on Node.js, Express.
 
   ## Overview
 
-  ![Project Components](https://raw.githubusercontent.com/username/repo/master/gitassets/1.png)
+  ![Project Components](https://raw.githubusercontent.com/zakariaelattar/main-ws/master/gitassets/1.png)
   
 
 ## Manual Installation
@@ -160,7 +160,7 @@ To view the list of available APIs and their specifications, run the server and 
 
 ## Postman Structure
 
-  ![Postman structure](https://raw.githubusercontent.com/username/repo/master/gitassets/2.png)
+  ![Postman structure](https://raw.githubusercontent.com/zakariaelattar/main-ws/master/gitassets/2.png)
 
 ## Error Handling
 
