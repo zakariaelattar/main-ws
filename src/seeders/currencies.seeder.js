@@ -11,11 +11,11 @@ const filePath = path.join(__dirname, '..', 'developer-docs/json/currencies.json
 
 const seedCurrencies = async() => {
     const currencies = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-    await Currency.create(currencies);
+    const createdCurrencies = await Currency.create(currencies);
 
     logger.info('Currencies seeded successfully !')
 
-    return;
+    return createdCurrencies;
 };
 
 

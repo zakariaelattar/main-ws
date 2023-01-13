@@ -1,15 +1,12 @@
 const mongoose = require('mongoose');
-const validator = require('validator');
-const bcrypt = require('bcryptjs');
+
 const { toJSON, paginate } = require('./plugins');
-const { roles } = require('../config/roles');
-const { ROLES } = require('../config/constants');
 
-
+const Schema = mongoose.Schema;
 
 const orderSchema = mongoose.Schema({
-    customer_name: {
-        type: String,
+    customer: {
+        type: Schema.Types.ObjectId,
         required: true,
     },
     shipping_address: {

@@ -11,11 +11,11 @@ const filePath = path.join(__dirname, '..', 'developer-docs/json/countries.json'
 
 const seedCountries = async() => {
     const countries = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-    await Country.create(countries);
+    const createCountries = await Country.create(countries);
 
     logger.info('Countries seeded successfully !')
 
-    return;
+    return createCountries;
 };
 
 

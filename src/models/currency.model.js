@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
-const validator = require('validator');
-const bcrypt = require('bcryptjs');
-const { toJSON, paginate } = require('./plugins');
-const { roles } = require('../config/roles');
-const { ROLES } = require('../config/constants');
 
+const { toJSON, paginate } = require('./plugins');
 
 
 const currencySchema = mongoose.Schema({

@@ -2,20 +2,20 @@ const mongoose = require('mongoose');
 const { Timezone } = require('../models');
 const fs = require('fs');
 const logger = require('../config/logger');
+const path = require('path');
 
-const faker = require('faker');
 
-
+const filePath = path.join(__dirname, '..', 'developer-docs/json/timezones.json');
 
 
 
 const seedTimezones = async() => {
-    const timezones = JSON.parse(fs.readFileSync('developer-docs/json/timezones.json', 'utf-8'));
-    await Timezone.create(timezones);
+    const timezones = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    const createdTimezones = await Timezone.create(timezones);
 
     logger.info('Timezones seeded successfully !')
 
-    return;
+    return createdTimezones;
 };
 
 

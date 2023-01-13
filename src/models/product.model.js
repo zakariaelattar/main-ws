@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
-const validator = require('validator');
-const bcrypt = require('bcryptjs');
+
 const { toJSON, paginate } = require('./plugins');
-const { roles } = require('../config/roles');
-const { ROLES } = require('../config/constants');
 
 
+
+const Schema = mongoose.Schema;
 
 const productSchema = mongoose.Schema({
     title: {
@@ -15,6 +14,9 @@ const productSchema = mongoose.Schema({
     description: {
         type: String,
 
+    },
+    region: {
+        type: Schema.Types.ObjectId
     },
     image_url: {
         type: String,
