@@ -34,7 +34,15 @@ cp .env.example .env
 - [Custom Mongoose Plugins](#custom-mongoose-plugins)
 - [Linting](#linting)
  
- ## Features
+  ## Business Features
+- Users (Register,Login,CRUD)
+- Products (CRUD)
+- Order (CRUD)
+- Region (CRUD)
+- Store (CRUD)
+
+
+ ## Technical Features
 
 - **MONGODB database**: [MongoDB](https://www.mongodb.com/) object data modeling using [Mongoose](https://mongoosejs.com)
 - **Authentication and authorization**: using [passport](http://www.passportjs.org)

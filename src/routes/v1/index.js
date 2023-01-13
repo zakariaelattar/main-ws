@@ -4,7 +4,6 @@ const userRoute = require('./users');
 const productRoute = require('./products');
 const storeRoute = require('./stores');
 const utilRoute = require('./utils');
-const paymentRoute = require('./payments');
 const orderRoute = require('./orders');
 const docsRoute = require('./docs');
 const config = require('../../config/config');
@@ -23,10 +22,7 @@ const defaultRoutes = [{
         path: '/orders',
         route: orderRoute,
     },
-    {
-        path: '/payments',
-        route: paymentRoute,
-    },
+
     {
         path: '/stores',
         route: storeRoute,
