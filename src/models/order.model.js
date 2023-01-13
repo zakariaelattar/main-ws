@@ -22,7 +22,7 @@ const orderSchema = mongoose.Schema({
         required: true,
 
     },
-    paid_at: {
+    paidAt: {
         type: Date,
         default: null
 

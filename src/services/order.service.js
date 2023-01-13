@@ -1,3 +1,4 @@
+const { externalService } = require('.');
 const { Order } = require('../models');
 
 
@@ -29,8 +30,11 @@ const queryOrders = async(filter, options) => {
  */
 const createOrder = async(order) => {
 
+    const createdOrder = await Order.create(order);
 
-    return await Order.create(order);
+    // execute the function asynchronously to not block the process
+    externalService.payOrder(createdOrder);
+    return createdOrder;
 };
 
 
