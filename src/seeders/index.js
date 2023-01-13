@@ -24,7 +24,7 @@ const runSeeder = async() => {
         const products = await seedProducts(regions);
         const stores = await seedStores(products);
         const { customerAdmins, customers, admins } = await seedUsers();
-        const orders = await seedOrders(customers);
+        const orders = await seedOrders(customers, products);
         return;
 
     } catch (err) {

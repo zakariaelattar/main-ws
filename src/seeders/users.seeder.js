@@ -45,7 +45,6 @@ const seedUsers = async() => {
     const users = [...customers, ...admins, ...customerAdmins];
 
 
-    console.log(users);
     await User.create(users);
 
     logger.info('Users seeded successfully !')

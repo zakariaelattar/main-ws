@@ -9,6 +9,10 @@ const orderSchema = mongoose.Schema({
         type: Schema.Types.ObjectId,
         required: true,
     },
+    products: [{
+        type: Schema.Types.ObjectId,
+        required: true,
+    }],
     shipping_address: {
         type: String,
 
