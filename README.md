@@ -159,6 +159,8 @@ To view the list of available APIs and their specifications, run the server and 
 
 ## Postman Structure
 
+  ![Project Components](https://github.com/zakariaelattar/main-ws/blob/master/gitassets/postman-structure.png?raw=true)
+
 ## Error Handling
 
 The app has a centralized error handling mechanism.
