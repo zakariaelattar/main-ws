@@ -15,7 +15,7 @@ This project is the main-ws of the e-commerce website built on Node.js, Express.
 
   ## Overview
 
-  ![Project Components](https://github.com/zakariaelattar/main-ws/blob/master/git-assets/project-components.png?raw=true)
+  ![Project Components](https://github.com/zakariaelattar/main-ws/blob/master/gitassets/project-components.png?raw=true)
 
 ## Manual Installation
 
