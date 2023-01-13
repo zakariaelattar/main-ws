@@ -6,10 +6,10 @@ const logger = require('../config/logger');
 
 
 const seedProducts = async(regions = []) => {
-    console.log(regions)
+    console.log(regions[0])
 
     const products = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 10; i++) {
 
         const product = new Product({
             title: faker.commerce.productName(),
@@ -21,11 +21,11 @@ const seedProducts = async(regions = []) => {
         });
         products.push(product);
     }
-    await Product.create(products);
+    const createdProducts = await Product.create(products);
 
     logger.info('Products seeded successfully !')
 
-    return;
+    return createdProducts;
 };
 
 

@@ -7,7 +7,7 @@
  const seedOrders = async(customers = []) => {
 
      const orders = [];
-     for (let i = 0; i < 100; i++) {
+     for (let i = 0; i < 10; i++) {
 
          const order = new Order({
              customer: customers[i]['_id'],

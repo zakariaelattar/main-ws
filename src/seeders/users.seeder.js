@@ -7,8 +7,7 @@ const logger = require('../config/logger');
 
 const seedUsers = async() => {
 
-    const users = [];
-    const costumers = [];
+    const customers = [];
     const admins = [];
     const customerAdmins = [];
 
@@ -22,7 +21,7 @@ const seedUsers = async() => {
             password: "00000000Za",
             roles: ['admin'],
         });
-        costumers.push(customer);
+        customers.push(customer);
 
         const admin = new User({
             name: faker.name.findName(),
@@ -41,15 +40,17 @@ const seedUsers = async() => {
         });
         customerAdmins.push(customerAdmin);
 
-        users.push([...customer, ...admin, ...customerAdmin]);
     }
 
+    const users = [...customers, ...admins, ...customerAdmins];
 
+
+    console.log(users);
     await User.create(users);
 
     logger.info('Users seeded successfully !')
 
-    return { customers, admins, customerAdmins }
+    return ({ customers, admins, customerAdmins })
 };
 
 

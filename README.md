@@ -59,16 +59,16 @@ cp .env.example .env
 
 ## Commands
 
-Seed Database:
+Run locally:
 
 ```bash
 npm run dev
 ```
 
-Running locally:
+Seed Database:
 
 ```bash
-npm run dev syncDb
+npm run  syncDb
 ```
 
 Running in production:
